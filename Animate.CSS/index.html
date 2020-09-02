@@ -18,6 +18,9 @@
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
         />
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/styles/default.min.css">
+        <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
@@ -25,20 +28,10 @@
             <header class="text-center bg-primary text-white p-5 animate__animated  animate__fadeInDown">
                 <h1 class="display-4">Animate.css Sandbox</h1>
             </header>
-            <section id="section-1" class="bg-light p-5 my-3 animate__animated  animate__fadeInLeft">
-                <h1>Section One</h1>
-                <p>
-                    This section is for the class "animate__fadeInLeft"
-                    <xmp class="bg-dark text-white ">
-        <section id="section-1" class="bg-light p-5 my-3 animate__animated  animate__fadeInLeft">
-            <h1>Section One</h1>
-            <p>
-                This section is for the class "animate__fadeInLeft"
-            </p>
-        </section>
-                    </xmp>
-                </p>
-            </section>
+            <div id="section-1" class="bg-light p-5 my-3 animate__animated  animate__fadeInLeft">
+                <h1>Section 1</h1>
+                <script src="https://gist.github.com/Shadman-Ahmed-Chowdhury/51101ec48a29ecf2426c36b34942c077.js"></script>
+            </div>
 
             <section id="section-2" class="bg-light p-5 my-3 animate__animated  animate__fadeInRight">
                 <h1>Section Two</h1>
@@ -49,7 +42,53 @@
                     aspernatur nesciunt aliquam, libero illo unde.
                 </p>
             </section>
+           
+            
+            
         </div>
         </div>
+
+        <div id="myDiv">
+            &lt;section id="section-2" class="bg-light p-5 my-3 animate__animated  animate__fadeInRight"&gt;
+            <br>
+            <br>
+               &lt;h1&gt;
+            <br>    Section Two <br>
+            &lt;/h1&gt;
+            <br>
+            &lt;/section&gt;
+            
+        </div>
+
+        <textarea name="" id="input" cols="60" rows="10"></textarea>
+        <button class="btn btn-primary" id="submitBtn">Submit</button>
+
+        <script>
+            
+            
+            const submitBtn = document.getElementById("submitBtn"); 
+             
+            submitBtn.addEventListener("click", function() {
+                const input = document.getElementById("input").value.toString();
+                var output = ""; 
+                
+                for(let i = 0; i < input.length; i++) {
+                    if(input.charAt(i) == "<")
+                        output += "&lt;"; 
+                    else if(input.charAt(i) == ">")
+                        output += "&gt;\n <br>";
+                    else 
+                        output += input.charAt(i); 
+                }
+                console.log(output);
+            }); 
+            
+        </script>
+            
+
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/highlight.min.js" integrity="sha512-tHQeqtcNWlZtEh8As/4MmZ5qpy0wj04svWFK7MIzLmUVIzaHXS8eod9OmHxyBL1UET5Rchvw7Ih4ZDv5JojZww==" crossorigin="anonymous"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script src="app.js"></script>
     </body>
 </html>
